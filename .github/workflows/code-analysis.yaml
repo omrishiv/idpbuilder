@@ -24,7 +24,8 @@ jobs:
           scan-type: 'fs'
           scan-ref: '.'
 #          skip-dirs: './bin/**'
-          format: 'sarif'
+          format: 'template'
+          template: '@/contrib/sarif.tpl'
           list-all-pkgs: 'true'
           output: 'trivy-results.sarif'
 
