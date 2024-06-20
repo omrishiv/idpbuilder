@@ -47,4 +47,4 @@ jobs:
           delete_tag_pattern: nightly
           delete_prerelease_only: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_NIGHTLY_TOKEN }}
