@@ -6,6 +6,7 @@ on:
 
 permissions:
   contents: write
+  security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
 
 jobs:
   code-analysis:
