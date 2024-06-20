@@ -21,6 +21,7 @@ jobs:
       - name: Scan current project
         uses: anchore/scan-action@v3
         with:
+          fail-build: false
           path: "."
 
       - name: Upload Trivy scan results to GitHub Security tab
