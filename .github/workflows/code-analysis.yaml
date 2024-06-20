@@ -19,7 +19,7 @@ jobs:
         with:
           scan-type: 'fs'
           scan-ref: '.'
-          skip-dirs: './bin/**'
+#          skip-dirs: './bin/**'
           format: 'sarif'
           output: 'trivy-results.sarif'
 
