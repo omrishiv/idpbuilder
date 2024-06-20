@@ -10,9 +10,15 @@ jobs:
   nightly:
     runs-on: ubuntu-22.04
     steps:
+      - name: Generate a token
+        id: generate-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
-          token: ${{ secrets.GH_NIGHTLY_TOKEN }}
+          token: ${{ steps.generate-token.outputs.token }}
           fetch-depth: 0
 
       - run: git fetch --force --tags
@@ -40,4 +46,4 @@ jobs:
           delete_tag_pattern: nightly
           delete_prerelease_only: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_NIGHTLY_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
