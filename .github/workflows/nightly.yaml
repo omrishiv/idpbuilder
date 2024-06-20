@@ -6,11 +6,6 @@ on:
   # This can be used to allow manually triggering nightlies from the web interface
   workflow_dispatch:
 
-permissions:
-  contents: write
-  id-token: write
-  packages: write
-
 jobs:
   nightly:
     runs-on: ubuntu-22.04
