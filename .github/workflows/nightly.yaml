@@ -25,7 +25,7 @@ jobs:
         run: |
           OUT_FILE=/tmp/idpbuilder make build
       - name: GoReleaser
-        uses: goreleaser/goreleaser-action@7ec5c2b0c6cdda6e8bbb49444bc797dd33d74dd8 # v5.0.0
+        uses: goreleaser/goreleaser-action@d33b6f6aeabd7fed8bb3fbf32c4d890d29f48545 # v5.0.0
         id: run-goreleaser
         with:
           version: nightly
