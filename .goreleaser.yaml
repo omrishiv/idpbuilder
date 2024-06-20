@@ -36,4 +36,7 @@ changelog:
     exclude:
       - '^docs:'
       - '^test:'
-
+nightly:
+  publish_release: true
+  keep_single_release: true
+  tag_name: nightly
