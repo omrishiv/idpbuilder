@@ -1,4 +1,4 @@
-name: PR
+name: code-scanner
 
 on:
   pull_request:
