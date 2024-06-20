@@ -29,6 +29,6 @@ jobs:
         id: run-goreleaser
         with:
           version: nightly
-          args: release --nightly --clean --timeout 30m
+          args: release --clean --timeout 30m
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
