@@ -1,4 +1,4 @@
-name: release
+name: nightly
 on:
   # This can be used to automatically publish nightlies at UTC nighttime
   schedule:
