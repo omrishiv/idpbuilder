@@ -18,19 +18,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run Trivy vulnerability scanner in fs mode
-        uses: aquasecurity/trivy-action@0.20.0
+      - name: Scan current project
+        uses: anchore/scan-action@v3
         with:
-          scan-type: 'fs'
-          scan-ref: '.'
-#          skip-dirs: './bin/**'
-          format: 'template'
-          template: '@/contrib/sarif.tpl'
-          list-all-pkgs: 'true'
-          output: 'trivy-results.sarif'
+          path: "."
 
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v2
         if: always()
         with:
-          sarif_file: 'trivy-results.sarif'
+          sarif_file: ${{ steps.scan.outputs.sarif }}
