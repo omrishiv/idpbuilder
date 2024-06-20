@@ -21,6 +21,7 @@ jobs:
           scan-ref: '.'
 #          skip-dirs: './bin/**'
           format: 'sarif'
+          list-all-pkgs: 'true'
           output: 'trivy-results.sarif'
 
       - name: Upload Trivy scan results to GitHub Security tab
