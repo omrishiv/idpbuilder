@@ -1,7 +1,11 @@
 name: code-scanner
 
 on:
+  push:
+    branches: [ "main" ]
   pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ "main" ]
     types: [opened, ready_for_review, synchronize]
 
 permissions:
@@ -20,7 +24,7 @@ jobs:
           scan-type: 'fs'
           scan-ref: '.'
 #          skip-dirs: './bin/**'
-          format: 'sarif'
+          format: 'template'
           list-all-pkgs: 'true'
           output: 'trivy-results.sarif'
 
