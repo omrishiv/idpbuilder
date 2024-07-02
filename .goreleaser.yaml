@@ -25,7 +25,10 @@ builds:
 archives:
   - format: tar.gz
     name_template: >-
-      {{ .ProjectName }}-{{ .Os }}-{{ .Arch }}
+      {{ .ProjectName }}-
+      {{ .Os }}-
+      {{- if contains "nightly" .Tag }}{{ .Tag }}-{{ end }}
+      {{ .Arch }}
 checksum:
   name_template: 'checksums.txt'
 snapshot:
